@@ -215,7 +215,7 @@ io.on("connection", (socket) => {
   });
 });
 
-// Start the server
-server.listen(3001, () => {
-  console.log("Server is running on port 3001");
+const port = process.env.PORT || 3001; // Use the port assigned by Glitch or 3001 if not provided
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
