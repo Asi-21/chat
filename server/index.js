@@ -11,6 +11,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(express.static(path.join(process.cwd(), "client/dist")));
 const server = http.createServer(app);
 
 const io = new Server(server, {
